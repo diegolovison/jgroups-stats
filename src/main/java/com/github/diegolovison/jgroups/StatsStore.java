@@ -18,11 +18,15 @@ public class StatsStore {
       return INSTANCE;
    }
 
-   public void add(StatsValue value) {
+   public synchronized void add(StatsValue value) {
       this.values.add(value);
    }
 
-   public List<StatsValue> getValues() {
+   public synchronized List<StatsValue> getValues() {
       return Collections.unmodifiableList(this.values);
+   }
+
+   public synchronized void clear() {
+      this.values.clear();
    }
 }

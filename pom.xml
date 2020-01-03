@@ -11,16 +11,20 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <javac.target>11</javac.target>
-        <version.jgroups>4.1.8.Final</version.jgroups>
+        <version.jgroups>4.1.9-SNAPSHOT</version.jgroups>
         <version.bytebuddy>1.10.6</version.bytebuddy>
+        <version.junit>4.13-rc-2</version.junit>
+        <version.log4j>2.8.1</version.log4j>
     </properties>
 
     <dependencies>
+        <!-- jgroups -->
         <dependency>
             <groupId>org.jgroups</groupId>
             <artifactId>jgroups</artifactId>
             <version>${version.jgroups}</version>
         </dependency>
+        <!-- instrument -->
         <dependency>
             <groupId>net.bytebuddy</groupId>
             <artifactId>byte-buddy</artifactId>
@@ -31,10 +35,22 @@
             <artifactId>byte-buddy-agent</artifactId>
             <version>${version.bytebuddy}</version>
         </dependency>
+        <!-- log -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${version.log4j}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${version.log4j}</version>
+        </dependency>
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.13-rc-2</version>
+            <version>${version.junit}</version>
             <scope>test</scope>
         </dependency>
 
